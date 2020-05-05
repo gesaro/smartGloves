@@ -25,30 +25,21 @@ class idiomViewController: BaseViewController {
         customData(countryflagImage: #imageLiteral(resourceName: "Brasil.png"), idiomLabel : "Portugues", countryNameLabel: "Brasil"),
         customData(countryflagImage: #imageLiteral(resourceName: "China.png"), idiomLabel : "Mandarin", countryNameLabel: "China"),
         customData(countryflagImage: #imageLiteral(resourceName: "Rusia"), idiomLabel : "Ruso", countryNameLabel: "Rusia"),
+        customData(countryflagImage: #imageLiteral(resourceName: "Rusia"), idiomLabel : "Ruso", countryNameLabel: "Rusia"),
 //        customData(countryflagImage: UIImage(systemName: "link") ??  #imageLiteral(resourceName: "Rusia"), idiomLabel : "Ruso", countryNameLabel: "Rusia")
     ]
     
-    let topConteinerView : UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    let topConteinerView = UIView()
     
     let backgroundContainerImageView : UIImageView = {
       let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "back3")
-
         return imageView
     }()
     
     let titleLabel : UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = SGTitleLabel()
         label.text = "Idioma"
-        label.font = UIFont(name: "Arial Rounded MT Bold", size: 37)
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.textAlignment = .center
         return label
     }()
     
@@ -56,7 +47,7 @@ class idiomViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.register(IdiomCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         return view
     }()
@@ -64,11 +55,10 @@ class idiomViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         //Se agregan las vistas creadas anteriormente a la vista principal
         view.addSubview(topConteinerView)
         topConteinerView.addSubview(backgroundContainerImageView)
-        backgroundContainerImageView.pin(to: view)
         topConteinerView.addSubview(titleLabel)
         
         view.addSubview(cell)
@@ -77,36 +67,26 @@ class idiomViewController: BaseViewController {
 
         setupLayout()
 
-
     }
     
     
     func setupLayout(){
-        NSLayoutConstraint.activate([
-            //Restricciones del topContentView
-            topConteinerView.topAnchor.constraint(equalTo: view.topAnchor),
-            topConteinerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topConteinerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topConteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.32),
-            
-//            //Restricciones del backgroundImageView dentro del topConteinerView
-//            backgroundContainerImageView.topAnchor.constraint(equalTo: topConteinerView.topAnchor),
-//            backgroundContainerImageView.leadingAnchor.constraint(equalTo: topConteinerView.leadingAnchor),
-//            backgroundContainerImageView.trailingAnchor.constraint(equalTo: topConteinerView.trailingAnchor),
-//            backgroundContainerImageView.bottomAnchor.constraint(equalTo: topConteinerView.bottomAnchor),
-            
-            //Restricciones del titleLabel dentro del topConteinerView
-            titleLabel.centerYAnchor.constraint(equalTo: topConteinerView.centerYAnchor),
-            titleLabel.leftAnchor.constraint(equalTo: topConteinerView.leftAnchor, constant: 12),
-            titleLabel.rightAnchor.constraint(equalTo: topConteinerView.rightAnchor, constant: -12),
-            titleLabel.heightAnchor.constraint(equalToConstant: 50),
-            
-            cell.topAnchor.constraint(equalTo: topConteinerView.bottomAnchor),
-            cell.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            cell.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            cell.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        
+        //Restricciones del topContentView
+        topConteinerView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
+        topConteinerView.anchorSize(width: nil, height: view.heightAnchor, heightMultiplier: 0.32)
 
-        ])
+        //Restricciones del backgroundImageView dentro del topConteinerView
+        backgroundContainerImageView.fillView(to: topConteinerView)
+
+        //Restricciones del titleLabel dentro del topConteinerView
+        titleLabel.anchor(top: nil, leading: topConteinerView.leadingAnchor, leadingConstant: 12, bottom: nil, trailing: topConteinerView.trailingAnchor, trailingConstant: -12)
+        titleLabel.anchorCenter(centerX: nil, centerY: topConteinerView.centerYAnchor)
+        titleLabel.anchorSize(width: nil, height: nil, heightConstant: 50)
+
+        //Restricciones de la celula
+        cell.anchor(top: topConteinerView.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+        
         view.sendSubviewToBack(backgroundContainerImageView)
     }
 
@@ -140,15 +120,11 @@ extension idiomViewController : UICollectionViewDelegate, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print(indexPath.item)
-//        cell.backgroundColor = .purple
-//        cell.backgroundColor = .red
-//        cell.selectItem(at: indexPath.item, animated: true, scrollPosition: .bottom)
-        
-        cell.backgroundColor = .white
-        
         if let cell = collectionView.cellForItem(at: indexPath) as? IdiomCell {
             cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.09581014555)
+
+            cell.animationPulsate2(view: cell, scaleX: 0.97, y: 0.97, duration: 1.0, springWithDamping: 0.2, springVelocity: 6)
+
         }
         
     }

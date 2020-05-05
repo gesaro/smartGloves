@@ -25,8 +25,6 @@ class BaseViewController: UIViewController {
         //Se hace visible o invisible(alargando) el backgroind
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-//        let backBarButton = UIBarButtonItem(title: "Ajustes", style: .plain, target: nil, action: nil)
-//        self.navigationItem.backBarButtonItem = backBarButton
     }
 
 }

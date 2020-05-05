@@ -10,26 +10,17 @@ import UIKit
 
 class calibrateViewController: BaseViewController {
 
-    let topConteinerView : UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    let topConteinerView = UIView()
     
-    let backgroundImageView : UIImageView = {
+    let backgroundContainerImageView : UIImageView = {
       let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "back3")
         return imageView
     }()
     
     let titleLabel : UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = SGTitleLabel()
         label.text = "Calibrar"
-        label.font = UIFont(name: "Arial Rounded MT Bold", size: 37)
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.textAlignment = .center
         return label
     }()
     
@@ -39,7 +30,7 @@ class calibrateViewController: BaseViewController {
         
         //Se agregan las vistas creadas anteriormente a la vista principal
         view.addSubview(topConteinerView)
-        topConteinerView.addSubview(backgroundImageView)
+        topConteinerView.addSubview(backgroundContainerImageView)
         topConteinerView.addSubview(titleLabel)
 
         setupLayout()
@@ -47,29 +38,20 @@ class calibrateViewController: BaseViewController {
 
     }
     
-    
+    //Funcion que contiene las restricciones de todos los elementos creados anteriormente
     func setupLayout(){
-        NSLayoutConstraint.activate([
-            //Restricciones del topContentView
-            topConteinerView.topAnchor.constraint(equalTo: view.topAnchor),
-            topConteinerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topConteinerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topConteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.32),
-            
-            //Restricciones del backgroundImageView dentro del topConteinerView
-            backgroundImageView.topAnchor.constraint(equalTo: topConteinerView.topAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: topConteinerView.leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: topConteinerView.trailingAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: topConteinerView.bottomAnchor),
-            
-            //Restricciones del titleLabel dentro del topConteinerView
-            titleLabel.centerYAnchor.constraint(equalTo: topConteinerView.centerYAnchor),
-            titleLabel.leftAnchor.constraint(equalTo: topConteinerView.leftAnchor, constant: 12),
-            titleLabel.rightAnchor.constraint(equalTo: topConteinerView.rightAnchor, constant: -12),
-            titleLabel.heightAnchor.constraint(equalToConstant: 50)
+        
+        //Restricciones del topContentView
+        topConteinerView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
+        topConteinerView.anchorSize(width: nil, height: view.heightAnchor, heightMultiplier: 0.32)
 
-        ])
-        view.sendSubviewToBack(backgroundImageView)
+        //Restricciones del backgroundImageView dentro del topConteinerView
+        backgroundContainerImageView.fillView(to: topConteinerView)
+
+        //Restricciones del titleLabel dentro del topConteinerView
+        titleLabel.anchor(top: nil, leading: topConteinerView.leadingAnchor, leadingConstant: 12, bottom: nil, trailing: topConteinerView.trailingAnchor, trailingConstant: -12)
+        titleLabel.anchorCenter(centerX: nil, centerY: topConteinerView.centerYAnchor)
+        titleLabel.anchorSize(width: nil, height: nil, heightConstant: 50)
     }
 
 }

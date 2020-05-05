@@ -28,6 +28,8 @@ class testViewController: UIViewController {
     }
     
     
+    
+    
     @IBAction func textToSpeech(_ sender: UIButton) {
         var textString = ""
         
@@ -44,7 +46,7 @@ class testViewController: UIViewController {
         //portugues Brazil -> pt-BR
         //(chino simplificado)Mandarin china -> zh-Hans
         //Ruso Rusio -> ru
-        myUtterance.voice = AVSpeechSynthesisVoice(language: "pt-BR")
+        myUtterance.voice = AVSpeechSynthesisVoice(language: "ru")
         myUtterance.rate = Float(vel)
         synth.speak(myUtterance)
     }
