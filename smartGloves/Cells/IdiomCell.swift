@@ -10,6 +10,8 @@ import UIKit
 
 class IdiomCell : UICollectionViewCell {
     
+    var idiomLanguageCode = ""
+    
     let countryFlagImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 10

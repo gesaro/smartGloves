@@ -24,18 +24,37 @@ struct APIResquest {
         self.resourceURL = resourceURL
     }
     
-//    func save(_ dataToSave: String, completion:  @escaping(Result<String, APIError>) -> Void ) {
-//        do {
-//            var urlRequest = URLRequest(url: resourceURL)
-//            urlRequest.httpMethod = "Post"
-//            urlRequest.addValue("application-json", forHTTPHeaderField: "Content-Type")
-//        }
-//        catch {
-//            completion()
-//        }
-//    }
+    func save(_ dataToSave: String, completion:  @escaping(Result<Datos, APIError>) -> Void ) {
+        do {
+            var urlRequest = URLRequest(url: resourceURL)
+            urlRequest.httpMethod = "Get"
+            urlRequest.addValue("application-json", forHTTPHeaderField: "Content-Type")
+            
+            let task = URLSession.shared.dataTask(with: urlRequest){
+                data, response, _ in
+                guard let httpResponse = response as? HTTPURLResponse,
+                    httpResponse.statusCode == 200, let JSONData = data else {
+                        completion(.failure(.responseProblems))
+                        return
+                }
+
+                do {
+                    let decoder = JSONDecoder()
+
+                    let contentData = try decoder.decode (Datos.self, from: JSONData)
+                    completion(.success(contentData))
+                }catch {
+                    completion(.failure(.decodingProblems))
+                }
+            }
+            task.resume()
+        }
+        catch {
+            completion(.failure(.encodingProblems))
+        }
+    }
     
-    func get(_ dataToSave: String, completion:  @escaping(Result<Datos, APIError>) -> Void ) {
+    func get(completion:  @escaping(Result<Datos, APIError>) -> Void ) {
         do {
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = "Get"

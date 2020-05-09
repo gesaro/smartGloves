@@ -19,3 +19,12 @@ final class Datos: Codable {
         self.password = password
     }
 }
+
+
+final class Datos2: Codable {
+    var idioma : String
+    
+    init(idioma:String) {
+        self.idioma = idioma
+    }
+}

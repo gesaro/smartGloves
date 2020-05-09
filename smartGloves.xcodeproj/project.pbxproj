@@ -13,7 +13,11 @@
 		560C99892456441000747701 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C99882456441000747701 /* UIView+Ext.swift */; };
 		560C998E2457E17500747701 /* SGTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998D2457E17500747701 /* SGTitleLabel.swift */; };
 		560C9990245A96EA00747701 /* HomeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998F245A96EA00747701 /* HomeTestViewController.swift */; };
+		56297DE0246541C90063DB9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56297DDF246541C90063DB9A /* Constants.swift */; };
 		566A0B0724621260006DE462 /* Datos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0624621260006DE462 /* Datos.swift */; };
+		566A0B0924632C14006DE462 /* testBluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0824632C14006DE462 /* testBluetoothViewController.swift */; };
+		566A0B0B24632D6B006DE462 /* BaseDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0A24632D6B006DE462 /* BaseDarkViewController.swift */; };
+		566A0B0D24633324006DE462 /* SGEdgeInsetsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0C24633324006DE462 /* SGEdgeInsetsButton.swift */; };
 		5689FD7D244E4B6B0061D3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD7C244E4B6B0061D3E5 /* AppDelegate.swift */; };
 		5689FD7F244E4B6B0061D3E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD7E244E4B6B0061D3E5 /* SceneDelegate.swift */; };
 		5689FD81244E4B6B0061D3E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD80244E4B6B0061D3E5 /* ViewController.swift */; };
@@ -36,7 +40,11 @@
 		560C99882456441000747701 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		560C998D2457E17500747701 /* SGTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTitleLabel.swift; sourceTree = "<group>"; };
 		560C998F245A96EA00747701 /* HomeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestViewController.swift; sourceTree = "<group>"; };
+		56297DDF246541C90063DB9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		566A0B0624621260006DE462 /* Datos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datos.swift; sourceTree = "<group>"; };
+		566A0B0824632C14006DE462 /* testBluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBluetoothViewController.swift; sourceTree = "<group>"; };
+		566A0B0A24632D6B006DE462 /* BaseDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDarkViewController.swift; sourceTree = "<group>"; };
+		566A0B0C24633324006DE462 /* SGEdgeInsetsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGEdgeInsetsButton.swift; sourceTree = "<group>"; };
 		5689FD79244E4B6B0061D3E5 /* smartGloves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartGloves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5689FD7C244E4B6B0061D3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5689FD7E244E4B6B0061D3E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,8 +103,17 @@
 				560C998D2457E17500747701 /* SGTitleLabel.swift */,
 				56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */,
 				56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */,
+				566A0B0C24633324006DE462 /* SGEdgeInsetsButton.swift */,
 			);
 			path = "SmartGloves Subclasses";
+			sourceTree = "<group>";
+		};
+		56297DDA2465401B0063DB9A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				56297DDF246541C90063DB9A /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		5689FD70244E4B6B0061D3E5 = {
@@ -118,6 +135,7 @@
 		5689FD7B244E4B6B0061D3E5 /* smartGloves */ = {
 			isa = PBXGroup;
 			children = (
+				56297DDA2465401B0063DB9A /* Constants */,
 				56D8AD4D2462070C001125F1 /* Managers */,
 				560C998C2457E13F00747701 /* SmartGloves Subclasses */,
 				560C9987245643E100747701 /* Extensions-Utilies */,
@@ -149,9 +167,11 @@
 			children = (
 				5689FD95244FCE4D0061D3E5 /* settingsViewController.swift */,
 				5689FD97245010180061D3E5 /* BaseViewController.swift */,
+				566A0B0A24632D6B006DE462 /* BaseDarkViewController.swift */,
 				5689FD99245026400061D3E5 /* idiomViewController.swift */,
 				560C9977245030FA00747701 /* calibrateViewController.swift */,
 				560C998F245A96EA00747701 /* HomeTestViewController.swift */,
+				566A0B0824632C14006DE462 /* testBluetoothViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -241,17 +261,21 @@
 				56D8AD4C245D083B001125F1 /* SGVerticallyCenteredTextView.swift in Sources */,
 				566A0B0724621260006DE462 /* Datos.swift in Sources */,
 				5689FD98245010180061D3E5 /* BaseViewController.swift in Sources */,
+				566A0B0924632C14006DE462 /* testBluetoothViewController.swift in Sources */,
 				56D8AD4A245CFFA0001125F1 /* SGCircularButton.swift in Sources */,
 				560C9978245030FA00747701 /* calibrateViewController.swift in Sources */,
 				5689FD81244E4B6B0061D3E5 /* ViewController.swift in Sources */,
 				560C99862456368400747701 /* IdiomCell.swift in Sources */,
+				566A0B0D24633324006DE462 /* SGEdgeInsetsButton.swift in Sources */,
 				5689FD7D244E4B6B0061D3E5 /* AppDelegate.swift in Sources */,
 				560C99892456441000747701 /* UIView+Ext.swift in Sources */,
 				5689FD9A245026400061D3E5 /* idiomViewController.swift in Sources */,
 				5689FD7F244E4B6B0061D3E5 /* SceneDelegate.swift in Sources */,
 				5689FD96244FCE4D0061D3E5 /* settingsViewController.swift in Sources */,
+				56297DE0246541C90063DB9A /* Constants.swift in Sources */,
 				560C998E2457E17500747701 /* SGTitleLabel.swift in Sources */,
 				56D8AD4F2462084A001125F1 /* APIRequest.swift in Sources */,
+				566A0B0B24632D6B006DE462 /* BaseDarkViewController.swift in Sources */,
 				560C9990245A96EA00747701 /* HomeTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
