@@ -24,64 +24,84 @@ struct APIResquest {
         self.resourceURL = resourceURL
     }
     
-    func save(_ dataToSave: String, completion:  @escaping(Result<Datos, APIError>) -> Void ) {
+//    func save(_ dataToSave: String, completion:  @escaping(Result<Datos, APIError>) -> Void ) {
+//        do {
+//            var urlRequest = URLRequest(url: resourceURL)
+//            urlRequest.httpMethod = "Get"
+//            urlRequest.addValue("application-json", forHTTPHeaderField: "Content-Type")
+//
+//            let task = URLSession.shared.dataTask(with: urlRequest){
+//                data, response, _ in
+//                guard let httpResponse = response as? HTTPURLResponse,
+//                    httpResponse.statusCode == 200, let JSONData = data else {
+//                        completion(.failure(.responseProblems))
+//                        return
+//                }
+//
+//                do {
+//                    let decoder = JSONDecoder()
+//
+//                    let contentData = try decoder.decode (Datos.self, from: JSONData)
+//                    completion(.success(contentData))
+//                }catch {
+//                    completion(.failure(.decodingProblems))
+//                }
+//            }
+//            task.resume()
+//        }
+//        catch {
+//            completion(.failure(.encodingProblems))
+//        }
+//    }
+    
+    func save(_ dataToSave: Datos, completion: @escaping(Result<String, APIError>) -> Void){
         do {
             var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = "Get"
-            urlRequest.addValue("application-json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpMethod = "Post"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(dataToSave)
             
             let task = URLSession.shared.dataTask(with: urlRequest){
                 data, response, _ in
                 guard let httpResponse = response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200, let JSONData = data else {
+                    httpResponse.statusCode == 201 else {
                         completion(.failure(.responseProblems))
                         return
                 }
-
-                do {
-                    let decoder = JSONDecoder()
-
-                    let contentData = try decoder.decode (Datos.self, from: JSONData)
-                    completion(.success(contentData))
-                }catch {
-                    completion(.failure(.decodingProblems))
-                }
+            completion(.success("Success"))
             }
             task.resume()
-        }
-        catch {
+        }catch{
             completion(.failure(.encodingProblems))
         }
     }
     
+    
+    
+    
     func get(completion:  @escaping(Result<Datos, APIError>) -> Void ) {
-        do {
-            var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = "Get"
-            urlRequest.addValue("application-json", forHTTPHeaderField: "Content-Type")
-            
-            let task = URLSession.shared.dataTask(with: urlRequest){
-                data, response, _ in
-                guard let httpResponse = response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200, let JSONData = data else {
-                        completion(.failure(.responseProblems))
-                        return
-                }
-
-                do {
-                    let decoder = JSONDecoder()
-
-                    let contentData = try decoder.decode (Datos.self, from: JSONData)
-                    completion(.success(contentData))
-                }catch {
-                    completion(.failure(.decodingProblems))
-                }
+        var urlRequest = URLRequest(url: resourceURL)
+        urlRequest.httpMethod = "Get"
+        urlRequest.addValue("application-json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest){
+            data, response, _ in
+            guard let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == 200, let JSONData = data else {
+                    completion(.failure(.responseProblems))
+                    return
             }
-            task.resume()
+
+            do {
+                let decoder = JSONDecoder()
+
+                let contentData = try decoder.decode (Datos.self, from: JSONData)
+                completion(.success(contentData))
+            }catch {
+                completion(.failure(.decodingProblems))
+            }
         }
-        catch {
-            completion(.failure(.encodingProblems))
-        }
+        task.resume()
     }
     
     

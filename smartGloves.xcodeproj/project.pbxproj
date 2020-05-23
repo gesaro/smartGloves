@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		560C9978245030FA00747701 /* calibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C9977245030FA00747701 /* calibrateViewController.swift */; };
-		560C998324537F7B00747701 /* Flags in Resources */ = {isa = PBXBuildFile; fileRef = 560C998224537F7B00747701 /* Flags */; };
 		560C99862456368400747701 /* IdiomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C99852456368300747701 /* IdiomCell.swift */; };
 		560C99892456441000747701 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C99882456441000747701 /* UIView+Ext.swift */; };
 		560C998E2457E17500747701 /* SGTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998D2457E17500747701 /* SGTitleLabel.swift */; };
-		560C9990245A96EA00747701 /* HomeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998F245A96EA00747701 /* HomeTestViewController.swift */; };
+		560C9990245A96EA00747701 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998F245A96EA00747701 /* HomeViewController.swift */; };
 		56297DE0246541C90063DB9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56297DDF246541C90063DB9A /* Constants.swift */; };
 		566A0B0724621260006DE462 /* Datos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0624621260006DE462 /* Datos.swift */; };
 		566A0B0924632C14006DE462 /* testBluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0824632C14006DE462 /* testBluetoothViewController.swift */; };
@@ -20,14 +19,18 @@
 		566A0B0D24633324006DE462 /* SGEdgeInsetsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0C24633324006DE462 /* SGEdgeInsetsButton.swift */; };
 		5689FD7D244E4B6B0061D3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD7C244E4B6B0061D3E5 /* AppDelegate.swift */; };
 		5689FD7F244E4B6B0061D3E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD7E244E4B6B0061D3E5 /* SceneDelegate.swift */; };
-		5689FD81244E4B6B0061D3E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD80244E4B6B0061D3E5 /* ViewController.swift */; };
 		5689FD84244E4B6B0061D3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689FD82244E4B6B0061D3E5 /* Main.storyboard */; };
 		5689FD86244E4B700061D3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5689FD85244E4B700061D3E5 /* Assets.xcassets */; };
 		5689FD89244E4B700061D3E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689FD87244E4B700061D3E5 /* LaunchScreen.storyboard */; };
 		5689FD96244FCE4D0061D3E5 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD95244FCE4D0061D3E5 /* settingsViewController.swift */; };
-		5689FD98245010180061D3E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD97245010180061D3E5 /* BaseViewController.swift */; };
+		5689FD98245010180061D3E5 /* BaseLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD97245010180061D3E5 /* BaseLightViewController.swift */; };
 		5689FD9A245026400061D3E5 /* idiomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD99245026400061D3E5 /* idiomViewController.swift */; };
 		5689FD9C245026800061D3E5 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689FD9B245026800061D3E5 /* settings.storyboard */; };
+		56A2B11D24726311002C0C6C /* testSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B11C24726311002C0C6C /* testSplashScreenViewController.swift */; };
+		56A2B11F24739FF9002C0C6C /* testCalibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B11E24739FF9002C0C6C /* testCalibrateViewController.swift */; };
+		56A2B1232473B191002C0C6C /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B1222473B191002C0C6C /* LetterCell.swift */; };
+		56A2B12724779493002C0C6C /* sensorsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B12624779493002C0C6C /* sensorsData.swift */; };
+		56A2B129247879AA002C0C6C /* testLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B128247879AA002C0C6C /* testLabel.swift */; };
 		56D8AD4A245CFFA0001125F1 /* SGCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */; };
 		56D8AD4C245D083B001125F1 /* SGVerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */; };
 		56D8AD4F2462084A001125F1 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AD4E2462084A001125F1 /* APIRequest.swift */; };
@@ -35,11 +38,10 @@
 
 /* Begin PBXFileReference section */
 		560C9977245030FA00747701 /* calibrateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calibrateViewController.swift; sourceTree = "<group>"; };
-		560C998224537F7B00747701 /* Flags */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Flags; path = ../../../../../Desktop/backgrounds/Flags; sourceTree = "<group>"; };
 		560C99852456368300747701 /* IdiomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomCell.swift; sourceTree = "<group>"; };
 		560C99882456441000747701 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		560C998D2457E17500747701 /* SGTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTitleLabel.swift; sourceTree = "<group>"; };
-		560C998F245A96EA00747701 /* HomeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestViewController.swift; sourceTree = "<group>"; };
+		560C998F245A96EA00747701 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56297DDF246541C90063DB9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		566A0B0624621260006DE462 /* Datos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datos.swift; sourceTree = "<group>"; };
 		566A0B0824632C14006DE462 /* testBluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBluetoothViewController.swift; sourceTree = "<group>"; };
@@ -48,15 +50,19 @@
 		5689FD79244E4B6B0061D3E5 /* smartGloves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartGloves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5689FD7C244E4B6B0061D3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5689FD7E244E4B6B0061D3E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5689FD80244E4B6B0061D3E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5689FD83244E4B6B0061D3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5689FD85244E4B700061D3E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5689FD88244E4B700061D3E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5689FD8A244E4B700061D3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5689FD95244FCE4D0061D3E5 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
-		5689FD97245010180061D3E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5689FD97245010180061D3E5 /* BaseLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLightViewController.swift; sourceTree = "<group>"; };
 		5689FD99245026400061D3E5 /* idiomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idiomViewController.swift; sourceTree = "<group>"; };
 		5689FD9B245026800061D3E5 /* settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
+		56A2B11C24726311002C0C6C /* testSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testSplashScreenViewController.swift; sourceTree = "<group>"; };
+		56A2B11E24739FF9002C0C6C /* testCalibrateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCalibrateViewController.swift; sourceTree = "<group>"; };
+		56A2B1222473B191002C0C6C /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
+		56A2B12624779493002C0C6C /* sensorsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sensorsData.swift; sourceTree = "<group>"; };
+		56A2B128247879AA002C0C6C /* testLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testLabel.swift; sourceTree = "<group>"; };
 		56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCircularButton.swift; sourceTree = "<group>"; };
 		56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGVerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 		56D8AD4E2462084A001125F1 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -76,7 +82,6 @@
 		560C998124537F0700747701 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				560C998224537F7B00747701 /* Flags */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				560C99852456368300747701 /* IdiomCell.swift */,
+				56A2B1222473B191002C0C6C /* LetterCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -104,6 +110,7 @@
 				56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */,
 				56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */,
 				566A0B0C24633324006DE462 /* SGEdgeInsetsButton.swift */,
+				56A2B128247879AA002C0C6C /* testLabel.swift */,
 			);
 			path = "SmartGloves Subclasses";
 			sourceTree = "<group>";
@@ -144,9 +151,7 @@
 				5689FD94244FCD7E0061D3E5 /* Screens */,
 				5689FD90244FCAB80061D3E5 /* Storyboards */,
 				5689FD7C244E4B6B0061D3E5 /* AppDelegate.swift */,
-				5689FD82244E4B6B0061D3E5 /* Main.storyboard */,
 				5689FD7E244E4B6B0061D3E5 /* SceneDelegate.swift */,
-				5689FD80244E4B6B0061D3E5 /* ViewController.swift */,
 				5689FD85244E4B700061D3E5 /* Assets.xcassets */,
 				5689FD87244E4B700061D3E5 /* LaunchScreen.storyboard */,
 				5689FD8A244E4B700061D3E5 /* Info.plist */,
@@ -157,6 +162,7 @@
 		5689FD90244FCAB80061D3E5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5689FD82244E4B6B0061D3E5 /* Main.storyboard */,
 				5689FD9B245026800061D3E5 /* settings.storyboard */,
 			);
 			path = Storyboards;
@@ -166,12 +172,14 @@
 			isa = PBXGroup;
 			children = (
 				5689FD95244FCE4D0061D3E5 /* settingsViewController.swift */,
-				5689FD97245010180061D3E5 /* BaseViewController.swift */,
+				5689FD97245010180061D3E5 /* BaseLightViewController.swift */,
 				566A0B0A24632D6B006DE462 /* BaseDarkViewController.swift */,
 				5689FD99245026400061D3E5 /* idiomViewController.swift */,
 				560C9977245030FA00747701 /* calibrateViewController.swift */,
-				560C998F245A96EA00747701 /* HomeTestViewController.swift */,
+				560C998F245A96EA00747701 /* HomeViewController.swift */,
 				566A0B0824632C14006DE462 /* testBluetoothViewController.swift */,
+				56A2B11C24726311002C0C6C /* testSplashScreenViewController.swift */,
+				56A2B11E24739FF9002C0C6C /* testCalibrateViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			children = (
 				56D8AD4E2462084A001125F1 /* APIRequest.swift */,
 				566A0B0624621260006DE462 /* Datos.swift */,
+				56A2B12624779493002C0C6C /* sensorsData.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -247,7 +256,6 @@
 				5689FD86244E4B700061D3E5 /* Assets.xcassets in Resources */,
 				5689FD84244E4B6B0061D3E5 /* Main.storyboard in Resources */,
 				5689FD9C245026800061D3E5 /* settings.storyboard in Resources */,
-				560C998324537F7B00747701 /* Flags in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,25 +266,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A2B129247879AA002C0C6C /* testLabel.swift in Sources */,
 				56D8AD4C245D083B001125F1 /* SGVerticallyCenteredTextView.swift in Sources */,
 				566A0B0724621260006DE462 /* Datos.swift in Sources */,
-				5689FD98245010180061D3E5 /* BaseViewController.swift in Sources */,
+				5689FD98245010180061D3E5 /* BaseLightViewController.swift in Sources */,
 				566A0B0924632C14006DE462 /* testBluetoothViewController.swift in Sources */,
 				56D8AD4A245CFFA0001125F1 /* SGCircularButton.swift in Sources */,
+				56A2B12724779493002C0C6C /* sensorsData.swift in Sources */,
 				560C9978245030FA00747701 /* calibrateViewController.swift in Sources */,
-				5689FD81244E4B6B0061D3E5 /* ViewController.swift in Sources */,
+				56A2B1232473B191002C0C6C /* LetterCell.swift in Sources */,
 				560C99862456368400747701 /* IdiomCell.swift in Sources */,
 				566A0B0D24633324006DE462 /* SGEdgeInsetsButton.swift in Sources */,
 				5689FD7D244E4B6B0061D3E5 /* AppDelegate.swift in Sources */,
 				560C99892456441000747701 /* UIView+Ext.swift in Sources */,
 				5689FD9A245026400061D3E5 /* idiomViewController.swift in Sources */,
 				5689FD7F244E4B6B0061D3E5 /* SceneDelegate.swift in Sources */,
+				56A2B11D24726311002C0C6C /* testSplashScreenViewController.swift in Sources */,
 				5689FD96244FCE4D0061D3E5 /* settingsViewController.swift in Sources */,
+				56A2B11F24739FF9002C0C6C /* testCalibrateViewController.swift in Sources */,
 				56297DE0246541C90063DB9A /* Constants.swift in Sources */,
 				560C998E2457E17500747701 /* SGTitleLabel.swift in Sources */,
 				56D8AD4F2462084A001125F1 /* APIRequest.swift in Sources */,
 				566A0B0B24632D6B006DE462 /* BaseDarkViewController.swift in Sources */,
-				560C9990245A96EA00747701 /* HomeTestViewController.swift in Sources */,
+				560C9990245A96EA00747701 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

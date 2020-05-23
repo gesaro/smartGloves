@@ -22,8 +22,13 @@ class BaseDarkViewController: UIViewController {
         self.navigationController!.navigationBar.isTranslucent = true
         //Color del icono y texto de la barra de navegacion
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //Se hace visible o invisible(alargando) el backgroind
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //Se hace visible o invisible(alargando) el background
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }

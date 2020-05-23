@@ -17,7 +17,7 @@ struct customData {
 
 private let reuseIdentifier = "idiomCell"
 
-class idiomViewController: BaseViewController {
+class idiomViewController: BaseLightViewController {
     
     
     let data = [
@@ -106,6 +106,8 @@ extension idiomViewController : UICollectionViewDelegate, UICollectionViewDelega
         cell.idiomLabel.text = idiom.idiomLabel
         cell.countryLabel.text = idiom.countryNameLabel
         cell.idiomLanguageCode = idiom.idiomLanguageCode
+        /* Cuando vuelva entrar a la pantalla de idiomas comprobara cual fue el idioma que selecciono anteriormente, para cuando
+            este rellenando los elemento pinte este mismo. */
         if languageCode == idiom.idiomLanguageCode {
             cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.09581014555)
         }
@@ -125,12 +127,12 @@ extension idiomViewController : UICollectionViewDelegate, UICollectionViewDelega
         
         //Encuantra el indice del lenguaje seleccionado anteriromente
         let indexIdiom = data.enumerated().filter{ $0.element.idiomLanguageCode == languageCode }.map{ $0.offset }
-        //Ya que se seleleccion un idioma nuevo se quita el efecto de seleccion del idioma anterior
+        //Ya que se selecciona un idioma nuevo se quita el efecto de seleccion del idioma anterior
         if let cell = collectionView.cellForItem(at: [0, indexIdiom.first!]) as? IdiomCell {
             cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     
-        //Se colocal el efecto de selccion de idioma
+        //Se coloca el efecto de seleccion de idioma
         if let cell = collectionView.cellForItem(at: indexPath) as? IdiomCell {
             cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.09581014555)
             

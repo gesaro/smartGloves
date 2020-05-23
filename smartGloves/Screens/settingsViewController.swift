@@ -8,7 +8,9 @@
 
 import UIKit
 
-class settingsViewController: BaseViewController {
+class settingsViewController: BaseLightViewController {
+    
+    let backBarButton = UIBarButtonItem(title: "Ajustes", style: .plain, target: nil, action: nil)
         
     let topConteinerView = UIView()
     
@@ -62,8 +64,6 @@ class settingsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let backBarButton = UIBarButtonItem(title: "Ajustes", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backBarButton
 
         

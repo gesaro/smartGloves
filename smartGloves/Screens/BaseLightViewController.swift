@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseLightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,10 @@ class BaseViewController: UIViewController {
         self.navigationController!.navigationBar.isTranslucent = true
         //Color del icono y texto de la barra de navegacion
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        //Se hace visible o invisible(alargando) el backgroind
+        //Se hace visible o invisible(alargando) el background
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        self.navigationController?.isNavigationBarHidden = false
     }
-
+    
 }

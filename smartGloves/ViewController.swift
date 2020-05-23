@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
+class ViewController: BaseLightViewController {
         
     
     override func viewDidLoad() {
@@ -23,10 +23,10 @@ class ViewController: BaseViewController {
 //    }
 
     
-    @IBAction func next(_ sender: Any) {
-        performSegue(withIdentifier: "settingsViewController", sender: nil)
-//        navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func next(_ sender: Any) {
+//        performSegue(withIdentifier: "settingsViewController", sender: nil)
+////        navigationController?.popViewController(animated: true)
+//    }
     
     
 }

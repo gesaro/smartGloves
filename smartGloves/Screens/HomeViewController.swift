@@ -9,7 +9,16 @@
 import UIKit
 import AVFoundation
 
-class HomeTestViewController: BaseDarkViewController {
+class HomeViewController: BaseDarkViewController {
+    
+    let backBarButton = UIBarButtonItem(title: "Inicio", style: .plain, target: nil, action: nil)
+            
+    let settingsButton : UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "settingsBlue"), for: .normal)
+        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchDown)
+        return button
+    }()
     
     let iconEarImageView : UIImageView = {
        let imageView = UIImageView()
@@ -27,13 +36,14 @@ class HomeTestViewController: BaseDarkViewController {
     
     let textView : UITextView = {
         
-        let texto = "Los autores de los textos de este portal de cultura son periodistas con experiencia. Además, un equipo pedagógico se encarga de preparar cada reportaje o entrevista como recurso ELE para aprender español. Este portal crece cada día. Te invitamos a visitarlo regularmente y a seguir las novedades a través de Twitter, somos @hablacultura. Si lo tuyo es el email, contacta con la editorial de cultura y ELE Habla con Eñe.Los autores de los textos de este portal de cultura son periodistas con experiencia. Además, un equipo pedagógico se encarga de preparar cada reportaje o entrevista como recurso ELE para aprender español.Este portal crece cada día. Te invitamos a visitarlo regularmente y a seguir las novedades a través de Twitter, somos @hablacultura. Si lo tuyo es el email, contacta con la editorial de cultura y ELE Habla con Eñe."
+        let texto = "Los autores de los textos de este portal de cultura son periodistas con experiencia. Además, un equipo pedagógico se encarga de preparar cada reportaje o entrevista como recurso ELE para aprender español. Este portal crece cada día. Te invitamos a visitarlo regularmente y a seguir las novedades a través de Twitter, somos @hablacultura. Si lo tuyo es el email, contacta con la editorial de cultura y ELE Habla con Eñe."
         
         let textView = SGVerticallyCenteredTextView()
         textView.backgroundColor = .clear
         textView.font = UIFont(name: "Avenir", size: 25)
         textView.textColor = #colorLiteral(red: 0.05490196078, green: 0.1098039216, blue: 0.3803921569, alpha: 1)
-        textView.text = texto///*"Hola, ¿cómo estás?"*/ "Hola, ¿cómo estás?, necesito ayuda para ir a esta dirección"
+        //textView.text = texto //"Hola, ¿cómo estás?, necesito ayuda para ir a esta dirección"
+        textView.text = "Hola, ¿cómo estás?"
         textView.textAlignment = .center
         textView.isEditable = false
         textView.returnKeyType = UIReturnKeyType.done
@@ -89,41 +99,31 @@ class HomeTestViewController: BaseDarkViewController {
         button.imageView?.contentMode = .scaleToFill
         return button
     }()
-    
+        
     //Variable de tipo AVSpeechSynthesizer para utlizar reproduccion de texto a voz
     let synth = AVSpeechSynthesizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.backBarButtonItem = backBarButton
                 
         createObservers()
         
         synth.delegate = self
         textView.delegate = self
                 
-        [iconEarImageView, shadowTextView, textView, playAudioButton, stopAudioButton, useKeyboardButton].forEach{ view.addSubview($0) }
+        [settingsButton, iconEarImageView, shadowTextView, textView, playAudioButton, stopAudioButton, useKeyboardButton].forEach{ view.addSubview($0) }
         stopAudioButton.addSubview(backgroundStopButton)
         playAudioButton.addSubview(backgroundPlayButton)
         view.sendSubviewToBack(stopAudioButton)
         
-        
-//        view.addSubview(iconEarImageView)
-//        view.addSubview(shadowTextView)
-//        view.addSubview(textView)
-//        view.addSubview(playAudioButton)
-//        view.addSubview(stopAudioButton)
-//        stopAudioButton.addSubview(backgroundStopButton)
-//        view.sendSubviewToBack(stopAudioButton)
-//        playAudioButton.addSubview(backgroundPlayButton)
-//        view.addSubview(useKeyboradButton)
-        
-        setupLayout()
-        
-        
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
+        //Al tocar cualquier parte de la pantalla se oculta el teclado.
+        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
         view.addGestureRecognizer(tap)
         
+        setupLayout()
+
     }
         
     func createObservers(){
@@ -134,7 +134,13 @@ class HomeTestViewController: BaseDarkViewController {
     }
     
     func setupLayout(){
+
+        //El ancho del ipad es demasiado, por eso se toma un maximo ancho del boton de 45.
+        let widthSettingsButton = min(view.frame.width * 0.085, 45)
         
+        settingsButton.anchorSize(width: nil, widthConstant: widthSettingsButton, height: nil, heightConstant: widthSettingsButton)
+        settingsButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, topConstant: 15 , leading: nil, bottom: nil, trailing: view.trailingAnchor, trailingConstant: -20)
+            
         //El alto del ipad es demasiado, por eso se toma como maximo de separacion al top de 165
         let topCorrectionIconEarImageView = min(165, view.frame.height * 0.18)//200
         //El ancho del ipad, por eso se toma como maximo de ancho del icono de 165
@@ -156,7 +162,7 @@ class HomeTestViewController: BaseDarkViewController {
 
         playAudioButton.anchorSize(width: nil, widthConstant: withCorrectionPlayAudioButton, height: nil, heightConstant: withCorrectionPlayAudioButton)
         playAudioButton.anchor(top: textView.bottomAnchor, topConstant: 25, leading: nil, bottom: nil, trailing: nil)
-//        playAudioButton.anchorCenter(centerX: view.centerXAnchor, centerY: nil)
+        //Se asigna el centerXAnchor para despues utilizarlo para cambiar el valor de centerX y poder crear una animacion en el playAudioButton
         playAudioButtonCenterXConstraint = playAudioButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         //Se activa la propiedad anterior
         playAudioButtonCenterXConstraint.isActive = true
@@ -183,8 +189,13 @@ class HomeTestViewController: BaseDarkViewController {
 
     }
     
+    @objc func settingsButtonTapped(){
+        performSegue(withIdentifier: "settingsViewController", sender: nil)
+    }
+    
     @objc func playAudioButtonTapped(sender: UIButton){
-        let textString = textView.text!
+//        let textString = textView.text!
+        let textString = "Los autores de los textos de este portal de cultura son periodistas con experiencia. Además, un equipo pedagógico se encarga de preparar cada reportaje o entrevista como recurso ELE para a"
 
         if !synth.isSpeaking {
             let myUtterance = AVSpeechUtterance(string: textString)
@@ -230,7 +241,8 @@ class HomeTestViewController: BaseDarkViewController {
 //                case .success(let datos):
 //
 //                    DispatchQueue.main.async { // Correct
-//                        let alert = UIAlertController(title: "", message: datos.usuario, preferredStyle: .alert)
+//                        self.textView.text = datos.password
+//                        let alert = UIAlertController(title: "", message: datos.password, preferredStyle: .alert)
 //                        alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
 //                        self.present(alert, animated: true)
 //                    }
@@ -259,6 +271,9 @@ class HomeTestViewController: BaseDarkViewController {
         let sizeTopKeyboardToShadowTextView = min(0, sizeBottomViewToShadowTextView - 10 - keyboardSize.height)
                 
         view.frame.origin.y = sizeTopKeyboardToShadowTextView
+        
+        settingsButton.isHidden = true
+        
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -266,13 +281,13 @@ class HomeTestViewController: BaseDarkViewController {
         view.endEditing(true)
         view.frame.origin.y = 0
         textView.isEditable = false
+        settingsButton.isHidden = false
     }
     
 }
 
-extension HomeTestViewController {
+extension HomeViewController {
         func animateCenterXConstraintPlayAudioButton(){
-    //        stopAudioButtonCenterXConstraint.constant = (view.frame.size.width * 0.25)
             stopAudioButtonCenterXConstraint.constant = (view.frame.size.width * 0.20)
             playAudioButtonCenterXConstraint.constant = (view.frame.size.width * -0.20)
 
@@ -294,7 +309,7 @@ extension HomeTestViewController {
         }
 }
 
-extension HomeTestViewController : AVSpeechSynthesizerDelegate {
+extension HomeViewController : AVSpeechSynthesizerDelegate {
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
         backgroundPlayButton.image = #imageLiteral(resourceName: "pauseAudio")
@@ -311,9 +326,9 @@ extension HomeTestViewController : AVSpeechSynthesizerDelegate {
     
 }
 
-extension HomeTestViewController : UITextViewDelegate {
+extension HomeViewController : UITextViewDelegate {
     
-    //Al clickear el boton de aceptar en el teclado desaparece el mismo
+    //Al clickear el boton de aceptar en el teclado desaparece el mismo.
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
