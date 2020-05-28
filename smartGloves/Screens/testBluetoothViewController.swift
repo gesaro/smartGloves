@@ -17,11 +17,12 @@ class testBluetoothViewController: BaseDarkViewController {
     var smartGlovesPeripheral : CBPeripheral!
     var smartGlovesCharacteristic : CBCharacteristic!
     
+    //Peripheral : AT-09 BLE module is peripheral. We will use characteristics “FFE1” to write data “ON” and “OFF”.
     //Guarda el uuid del modulo bluetooth AT-09, el cual indica que se puede leer y escribir datos sobre el modulo.
     let characteristicCode = "FFE1"
     
     //Nombre del modulo bluetooth
-    let smartGlovesBluetoothName = "MLT-BT05"
+    let smartGlovesBluetoothName = "smartGloves" //MLT-BT05
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -174,4 +175,14 @@ extension testBluetoothViewController : CBCentralManagerDelegate, CBPeripheralDe
 //    'd4': d4
 //}
 
-//Peripheral : AT-09 BLE module is peripheral. We will use characteristics “FFE1” to write data “ON” and “OFF”.
+//{'ax':1300,
+// 'ay':200,
+// 'az':1723,
+// 'gx':637,
+// 'gy':319,
+// 'gz':35,
+// 'd1':20,
+// 'd2':30,
+// 'd3':40,
+// 'd4':50
+//}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3c-rQ-Ih6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calibrate View Controller-->
+        <scene sceneID="RjX-Wx-qwd">
+            <objects>
+                <viewController id="E3c-rQ-Ih6" customClass="calibrateViewController" customModule="smartGloves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uiz-NU-E52">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Q08-9S-ogk"/>
+                    </view>
+                    <connections>
+                        <segue destination="ZLC-mK-6t5" kind="presentation" identifier="calibrateAlphabetViewController" id="fix-LC-JSv"/>
+                        <segue destination="axI-m6-WhI" kind="presentation" identifier="testSplash" id="j8F-X2-qAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qs8-aq-CvH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13" y="165"/>
+        </scene>
+        <!--Calibrate Alphabet View Controller-->
+        <scene sceneID="9kR-oJ-kFX">
+            <objects>
+                <viewController id="ZLC-mK-6t5" customClass="calibrateAlphabetViewController" customModule="smartGloves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Ha-cd-E2D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hKF-eX-6sZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDg-Jm-L5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="609"/>
+        </scene>
+        <!--Calibration Tutorial View Controller-->
+        <scene sceneID="MJh-3e-V4L">
+            <objects>
+                <viewController id="axI-m6-WhI" customClass="CalibrationTutorialViewController" customModule="smartGloves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cx6-XZ-TQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ue5-oG-0ZD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j31-FI-V9L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3w-5o-lLk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-106"/>
+        </scene>
+    </scenes>
+</document>

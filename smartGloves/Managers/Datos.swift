@@ -21,3 +21,15 @@ final class Datos: Codable {
         self.password = password
     }
 }
+
+
+
+
+final class smart: Codable {
+
+    var mensaje:String
+    
+    init(mensaje:String){
+        self.mensaje = mensaje
+    }
+}

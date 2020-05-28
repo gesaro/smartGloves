@@ -10,10 +10,9 @@ import UIKit
 
 class testSplashScreenViewController: BaseLightViewController {
     
-    let background : UIImageView = {
+    let backgroundImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.image = #imageLiteral(resourceName: "aaa")
-//        imageView.image = #imageLiteral(resourceName: "iPhone_X-XS_1")
         return imageView
     }()
     
@@ -26,7 +25,6 @@ class testSplashScreenViewController: BaseLightViewController {
     let iconSmartGlovesImageView : UIImageView = {
        let imageView = UIImageView()
         imageView.image = #imageLiteral(resourceName: "iconSmartGloves")
-//        imageView.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0.3352953767, alpha: 0.2393782106)
         return imageView
     }()
     
@@ -50,19 +48,14 @@ class testSplashScreenViewController: BaseLightViewController {
         button.setTitleColor(#colorLiteral(red: 0.05490196078, green: 0.1098039216, blue: 0.3803921569, alpha: 1), for: .normal)
         button.layer.cornerRadius = 27
         button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchDown)
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(background)
-        view.addSubview(titleLabel)
-        view.addSubview(iconSmartGlovesImageView)
-        view.addSubview(textTextView)
-        view.addSubview(buttonStart)
+                
+        [backgroundImageView, titleLabel, iconSmartGlovesImageView, textTextView, buttonStart].forEach{ view.addSubview($0) }
         
         
         setupLayout()
@@ -71,7 +64,7 @@ class testSplashScreenViewController: BaseLightViewController {
     
     func setupLayout(){
         
-        background.fillView(to: view)
+        backgroundImageView.fillView(to: view)
         
         
         titleLabel.anchor(top: view.topAnchor, topConstant: view.frame.height * 0.21, leading: view.leadingAnchor, leadingConstant: 12, bottom: nil, trailing: view.trailingAnchor, trailingConstant: -12)
@@ -79,7 +72,6 @@ class testSplashScreenViewController: BaseLightViewController {
         
         
         iconSmartGlovesImageView.anchorCenter(centerX: view.centerXAnchor, centerY: nil)
-//        iconSmartGlovesImageView.anchorSize(width: nil, widthConstant: view.frame.width * 0.339, height: nil, heightConstant: view.frame.width * 0.278)
         iconSmartGlovesImageView.anchorSize(width: nil, widthConstant: 140, height: nil, heightConstant: 115)
         iconSmartGlovesImageView.anchor(top: view.topAnchor, topConstant: view.frame.height * 0.5 - 122 ,leading: nil, bottom: nil, trailing: nil)
         
@@ -93,11 +85,11 @@ class testSplashScreenViewController: BaseLightViewController {
         
             
         
-        view.sendSubviewToBack(background)
+        view.sendSubviewToBack(backgroundImageView)
     }
     
     @objc func startButtonTapped(){
-        performSegue(withIdentifier: "testCalibrate", sender: nil)
+//        performSegue(withIdentifier: "testCalibrate", sender: nil)
     }
     
 }

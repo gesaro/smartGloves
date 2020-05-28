@@ -16,26 +16,21 @@ struct countryLanguageCode {
     static let rusia = "ru"
 }
 
-//struct statusSmartGloves {
-//    static let active = "active"
-//    static let inactive = "inactive"
-//}
 
 enum stateSmartgloves : String {
-    case active = "actibbbob"
+    case active
     case inactive
 }
 
 var languageCode = "es-MX"
 
-var stateToRecvData : stateSmartgloves = .active
-//var stateSmartGloves : stateSmartgloves = .active
+var stateToRecvData : stateSmartgloves = .inactive
 
 var alphabetCalibrationData = [
-    sensorsData(ax : 3427, ay : -1924, az : 15855, gx : 669, gy : 756, gz : -1437, d1 : 456, d2 : 434, d3 : 596, d4 : 618, target : "a"),
-    sensorsData(ax : 12923, ay : -5024, az : 8943, gx : 343, gy : 371, gz : -1, d1 : 160, d2 : 145, d3 : 192, d4 : 181, target : "b"),
-    sensorsData(ax : 12011, ay : -5456, az : 10363, gx : 79, gy : 317, gz : -868, d1 : 438, d2 : 354, d3 : 425, d4 : 191, target : "c"),
-    sensorsData(ax : 343, ay : -192, az : 1234, gx : 669, gy : 756, gz : -1437, d1 : 456, d2 : 434, d3 : 596, d4 : 618, target : "d")
+    sensorsData(ax : 3427, ay : -1924, az : 15855, gx : 669, gy : 756, gz : -1437, d1 : 456, d2 : 434, d3 : 596, d4 : 618, target : "a", idiom : languageCode),
+    sensorsData(ax : 12923, ay : -5024, az : 8943, gx : 343, gy : 371, gz : -1, d1 : 160, d2 : 145, d3 : 192, d4 : 181, target : "b", idiom : languageCode),
+    sensorsData(ax : 12011, ay : -5456, az : 10363, gx : 79, gy : 317, gz : -868, d1 : 438, d2 : 354, d3 : 425, d4 : 191, target : "c", idiom : languageCode),
+    sensorsData(ax : 343, ay : -192, az : 1234, gx : 669, gy : 756, gz : -1437, d1 : 456, d2 : 434, d3 : 596, d4 : 618, target : "d", idiom : languageCode)
 ]
 
 //ax = 3427    ay = -1924   az = 15855    gx = 669   gy = 756   gz = -1437, d1 = 456, d2 = 434, d3 = 596, d4 = 618

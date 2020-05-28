@@ -24,9 +24,9 @@ class testLabel : UILabel {
     }
     
     
-    var startNumber : Float = 0.0
-    var endNumber : Float = 0.0
-    
+    var startNumber : Int = 0
+    var endNumber : Int = 0
+        
     var progress : TimeInterval!
     var duration : TimeInterval!
     var lastUpdate : TimeInterval!
@@ -36,64 +36,82 @@ class testLabel : UILabel {
     var counterType : CounterType!
     var counterAnimationType: CounterAnimationType!
     
-    var currentCounterValue : Float {
-        if progress >= duration {
-            return endNumber
-        }
-        
-        let percentage = Float(progress / duration)
-        let update = updateCounter(counterValue: percentage)
-        
-        return startNumber + (update * (endNumber - startNumber))
-    }
+//    var currentCounterValue : Float {
+//        if progress >= duration {
+//            return endNumber
+//        }
+//
+//        let percentage = Float(progress / duration)
+//        let update = updateCounter(counterValue: percentage)
+//
+//        return startNumber + (update * (endNumber - startNumber))
+//    }
+    
+    var currentCounterValue : Int = 0
     
     
-    
-    
-    func count(fromValue: Float, to toValue: Float, withDuration duration: TimeInterval, andAnimationType animationType: CounterAnimationType, andCounterType counterType: CounterType){
+    func count(fromValue: Int, to toValue: Int, withDuration duration: TimeInterval, andAnimationType animationType: CounterAnimationType, andCounterType counterType: CounterType){
         self.startNumber = fromValue
         self.endNumber = toValue
         self.duration = duration
         self.counterType = counterType
         self.counterAnimationType = animationType
         self.progress = 0
-        self.lastUpdate = Date.timeIntervalSinceReferenceDate
-        
+
         invalidateTimer()
-        
+
         if duration == 0 {
             updateText(value: toValue)
             return
         }
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(testLabel.updateValue), userInfo: nil, repeats: true)
+
+//        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateValue), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateValue), userInfo: nil, repeats: true)
     }
-    
     
     @objc func updateValue(){
-        let now = Date.timeIntervalSinceReferenceDate
-        progress = progress + (now - lastUpdate)
-        lastUpdate = now
+//        let now = Date.timeIntervalSinceReferenceDate
+//        progress = progress + (now - lastUpdate)
+//
+//        print(progress!, lastUpdate!, now)
+//        lastUpdate = now
+//
+//
+//        if progress >= duration {
+//            invalidateTimer()
+//            progress = duration
+//        }
+//
+//        //updateText in label
+//
+//        updateText(value: currentCounterValue)
         
-        if progress >= duration {
-            invalidateTimer()
-            progress = duration
+        if currentCounterValue  != 0 {
+            currentCounterValue -= 1
+            
+            updateText(value: currentCounterValue)
+        }
+        else {
+            timer?.invalidate()
+            return
         }
         
-        //updateText in label
-        
-        updateText(value: currentCounterValue)
     }
     
-    func updateText(value: Float){
-        switch counterType! {
-        case .Int:
-            self.text = "\(Int(value))"
-        case .Float:
-            self.text = String(format: "%.2f", value)
-        }
+    
+    func updateText(value: Int){
+        self.text = String(value)
     }
         
+//    func updateText(value: Float){
+//        switch counterType! {
+//        case .Int:
+//            self.text = "\(Int(value))"
+//        case .Float:
+//            self.text = String(format: "%.2f", value)
+//        }
+//    }
+    
         
     func updateCounter(counterValue: Float) -> Float {
         switch counterAnimationType! {

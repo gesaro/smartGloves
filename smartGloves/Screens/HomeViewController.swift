@@ -11,6 +11,8 @@ import AVFoundation
 
 class HomeViewController: BaseDarkViewController {
     
+    var flag = 0
+    
     let backBarButton = UIBarButtonItem(title: "Inicio", style: .plain, target: nil, action: nil)
             
     let settingsButton : UIButton = {
@@ -35,8 +37,6 @@ class HomeViewController: BaseDarkViewController {
     }()
     
     let textView : UITextView = {
-        
-        let texto = "Los autores de los textos de este portal de cultura son periodistas con experiencia. Además, un equipo pedagógico se encarga de preparar cada reportaje o entrevista como recurso ELE para aprender español. Este portal crece cada día. Te invitamos a visitarlo regularmente y a seguir las novedades a través de Twitter, somos @hablacultura. Si lo tuyo es el email, contacta con la editorial de cultura y ELE Habla con Eñe."
         
         let textView = SGVerticallyCenteredTextView()
         textView.backgroundColor = .clear
@@ -190,12 +190,12 @@ class HomeViewController: BaseDarkViewController {
     }
     
     @objc func settingsButtonTapped(){
+        stopAudioButtonTapped()
         performSegue(withIdentifier: "settingsViewController", sender: nil)
     }
     
     @objc func playAudioButtonTapped(sender: UIButton){
-//        let textString = textView.text!
-        let textString = "Los autores de los textos de este portal de cultura son periodistas con experiencia. Además, un equipo pedagógico se encarga de preparar cada reportaje o entrevista como recurso ELE para a"
+        let textString = textView.text!
 
         if !synth.isSpeaking {
             let myUtterance = AVSpeechUtterance(string: textString)
@@ -222,7 +222,7 @@ class HomeViewController: BaseDarkViewController {
     }
     
     
-    @objc func stopAudioButtonTapped(sender: UIButton){
+    @objc func stopAudioButtonTapped(){
         synth.stopSpeaking(at: AVSpeechBoundary.immediate)
         backgroundPlayButton.image = #imageLiteral(resourceName: "playAudio")
         playAudioButton.layer.borderWidth = 0
@@ -232,29 +232,53 @@ class HomeViewController: BaseDarkViewController {
     
     
     @objc func useKeyboardButtonTapped(){
-//        let usuario = "test"
-//
-//        let postRequest = APIResquest(endpoint: "post/\(usuario)")
-//
-//        postRequest.get(completion: { result in
-//            switch result{
-//                case .success(let datos):
-//
-//                    DispatchQueue.main.async { // Correct
-//                        self.textView.text = datos.password
-//                        let alert = UIAlertController(title: "", message: datos.password, preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
-//                        self.present(alert, animated: true)
-//                    }
-//
-//
-//                case .failure(let err):
-//                    print("Error: \(err)")
-//            }
-//        })
+
         
-        textView.isEditable = true
-        textView.becomeFirstResponder()
+        let postRequest = APIResquest(endpoint: "data")
+        
+
+//        let string = "{\"ax\":1300,\"ay\":200,\"az\":1723,\"gx\":637,\"gy\":319,\"gz\":35,\"d1\":20,\"d2\":30,\"d3\":40,\"d4\":50}"
+        var string = "{'ax':1300,'ay':200,'az':1723,'gx':637,'gy':319,'gz':35,'d1':20,'d2':30,'d3':40,'d4':50}"
+        string = string.replacingOccurrences(of: "'", with: "\"")
+        let data = string.data(using: .utf8)!
+
+
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : []) as? [String: Any] {
+                
+                guard  let ax = jsonArray["ax"] as? Int, let ay = jsonArray["ay"] as? Int, let az = jsonArray["az"] as? Int, let gx = jsonArray["gx"] as? Int, let gy = jsonArray["gy"] as? Int, let gz = jsonArray["gz"] as? Int, let d1 = jsonArray["d1"] as? Int, let d2 = jsonArray["d2"] as? Int, let d3 = jsonArray["d3"] as? Int, let d4 = jsonArray["d4"] as? Int else { return }
+                
+                let datos = sensorsData(ax: ax+flag, ay: ay, az: az, gx: gx, gy: gy, gz: gz, d1: d1, d2: d2, d3: d3, d4: d4, target: "-", idiom : languageCode)
+                flag += 1
+                postRequest.save(datos, completion: { result in
+                    switch result{
+                        case .success(let response):
+                        print("mensaje: \(response.mensaje)\n")
+                            DispatchQueue.main.async {
+                               self.textView.text = response.mensaje
+                            }
+                    
+                        case .failure(let err):
+                            print("Error: \(err)")
+                    }
+                })
+
+            } else {
+                print("bad json")
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        
+        
+        
+        
+        
+//        stopAudioButtonTapped()
+//        textView.isEditable = true
+//        textView.becomeFirstResponder()
+        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

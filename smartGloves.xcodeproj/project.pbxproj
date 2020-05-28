@@ -13,6 +13,9 @@
 		560C998E2457E17500747701 /* SGTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998D2457E17500747701 /* SGTitleLabel.swift */; };
 		560C9990245A96EA00747701 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C998F245A96EA00747701 /* HomeViewController.swift */; };
 		56297DE0246541C90063DB9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56297DDF246541C90063DB9A /* Constants.swift */; };
+		563C60DA247F181F001A0B63 /* CalibrationTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563C60D9247F181F001A0B63 /* CalibrationTutorialViewController.swift */; };
+		563C60DC247F194F001A0B63 /* CalibrationTutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563C60DB247F194F001A0B63 /* CalibrationTutorialCell.swift */; };
+		5649736B247C69E60020E5A6 /* calibrate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5649736A247C69E60020E5A6 /* calibrate.storyboard */; };
 		566A0B0724621260006DE462 /* Datos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0624621260006DE462 /* Datos.swift */; };
 		566A0B0924632C14006DE462 /* testBluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0824632C14006DE462 /* testBluetoothViewController.swift */; };
 		566A0B0B24632D6B006DE462 /* BaseDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A0B0A24632D6B006DE462 /* BaseDarkViewController.swift */; };
@@ -27,10 +30,9 @@
 		5689FD9A245026400061D3E5 /* idiomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689FD99245026400061D3E5 /* idiomViewController.swift */; };
 		5689FD9C245026800061D3E5 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689FD9B245026800061D3E5 /* settings.storyboard */; };
 		56A2B11D24726311002C0C6C /* testSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B11C24726311002C0C6C /* testSplashScreenViewController.swift */; };
-		56A2B11F24739FF9002C0C6C /* testCalibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B11E24739FF9002C0C6C /* testCalibrateViewController.swift */; };
+		56A2B11F24739FF9002C0C6C /* calibrateAlphabetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B11E24739FF9002C0C6C /* calibrateAlphabetViewController.swift */; };
 		56A2B1232473B191002C0C6C /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B1222473B191002C0C6C /* LetterCell.swift */; };
 		56A2B12724779493002C0C6C /* sensorsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B12624779493002C0C6C /* sensorsData.swift */; };
-		56A2B129247879AA002C0C6C /* testLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2B128247879AA002C0C6C /* testLabel.swift */; };
 		56D8AD4A245CFFA0001125F1 /* SGCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */; };
 		56D8AD4C245D083B001125F1 /* SGVerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */; };
 		56D8AD4F2462084A001125F1 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AD4E2462084A001125F1 /* APIRequest.swift */; };
@@ -43,6 +45,9 @@
 		560C998D2457E17500747701 /* SGTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTitleLabel.swift; sourceTree = "<group>"; };
 		560C998F245A96EA00747701 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56297DDF246541C90063DB9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		563C60D9247F181F001A0B63 /* CalibrationTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationTutorialViewController.swift; sourceTree = "<group>"; };
+		563C60DB247F194F001A0B63 /* CalibrationTutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationTutorialCell.swift; sourceTree = "<group>"; };
+		5649736A247C69E60020E5A6 /* calibrate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = calibrate.storyboard; sourceTree = "<group>"; };
 		566A0B0624621260006DE462 /* Datos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datos.swift; sourceTree = "<group>"; };
 		566A0B0824632C14006DE462 /* testBluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBluetoothViewController.swift; sourceTree = "<group>"; };
 		566A0B0A24632D6B006DE462 /* BaseDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDarkViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +64,9 @@
 		5689FD99245026400061D3E5 /* idiomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idiomViewController.swift; sourceTree = "<group>"; };
 		5689FD9B245026800061D3E5 /* settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		56A2B11C24726311002C0C6C /* testSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testSplashScreenViewController.swift; sourceTree = "<group>"; };
-		56A2B11E24739FF9002C0C6C /* testCalibrateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCalibrateViewController.swift; sourceTree = "<group>"; };
+		56A2B11E24739FF9002C0C6C /* calibrateAlphabetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calibrateAlphabetViewController.swift; sourceTree = "<group>"; };
 		56A2B1222473B191002C0C6C /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
 		56A2B12624779493002C0C6C /* sensorsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sensorsData.swift; sourceTree = "<group>"; };
-		56A2B128247879AA002C0C6C /* testLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testLabel.swift; sourceTree = "<group>"; };
 		56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGCircularButton.swift; sourceTree = "<group>"; };
 		56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGVerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 		56D8AD4E2462084A001125F1 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			children = (
 				560C99852456368300747701 /* IdiomCell.swift */,
 				56A2B1222473B191002C0C6C /* LetterCell.swift */,
+				563C60DB247F194F001A0B63 /* CalibrationTutorialCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -110,7 +115,6 @@
 				56D8AD49245CFFA0001125F1 /* SGCircularButton.swift */,
 				56D8AD4B245D083B001125F1 /* SGVerticallyCenteredTextView.swift */,
 				566A0B0C24633324006DE462 /* SGEdgeInsetsButton.swift */,
-				56A2B128247879AA002C0C6C /* testLabel.swift */,
 			);
 			path = "SmartGloves Subclasses";
 			sourceTree = "<group>";
@@ -164,6 +168,7 @@
 			children = (
 				5689FD82244E4B6B0061D3E5 /* Main.storyboard */,
 				5689FD9B245026800061D3E5 /* settings.storyboard */,
+				5649736A247C69E60020E5A6 /* calibrate.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -179,7 +184,8 @@
 				560C998F245A96EA00747701 /* HomeViewController.swift */,
 				566A0B0824632C14006DE462 /* testBluetoothViewController.swift */,
 				56A2B11C24726311002C0C6C /* testSplashScreenViewController.swift */,
-				56A2B11E24739FF9002C0C6C /* testCalibrateViewController.swift */,
+				56A2B11E24739FF9002C0C6C /* calibrateAlphabetViewController.swift */,
+				563C60D9247F181F001A0B63 /* CalibrationTutorialViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 			files = (
 				5689FD89244E4B700061D3E5 /* LaunchScreen.storyboard in Resources */,
 				5689FD86244E4B700061D3E5 /* Assets.xcassets in Resources */,
+				5649736B247C69E60020E5A6 /* calibrate.storyboard in Resources */,
 				5689FD84244E4B6B0061D3E5 /* Main.storyboard in Resources */,
 				5689FD9C245026800061D3E5 /* settings.storyboard in Resources */,
 			);
@@ -266,8 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56A2B129247879AA002C0C6C /* testLabel.swift in Sources */,
 				56D8AD4C245D083B001125F1 /* SGVerticallyCenteredTextView.swift in Sources */,
+				563C60DA247F181F001A0B63 /* CalibrationTutorialViewController.swift in Sources */,
 				566A0B0724621260006DE462 /* Datos.swift in Sources */,
 				5689FD98245010180061D3E5 /* BaseLightViewController.swift in Sources */,
 				566A0B0924632C14006DE462 /* testBluetoothViewController.swift in Sources */,
@@ -278,12 +285,13 @@
 				560C99862456368400747701 /* IdiomCell.swift in Sources */,
 				566A0B0D24633324006DE462 /* SGEdgeInsetsButton.swift in Sources */,
 				5689FD7D244E4B6B0061D3E5 /* AppDelegate.swift in Sources */,
+				563C60DC247F194F001A0B63 /* CalibrationTutorialCell.swift in Sources */,
 				560C99892456441000747701 /* UIView+Ext.swift in Sources */,
 				5689FD9A245026400061D3E5 /* idiomViewController.swift in Sources */,
 				5689FD7F244E4B6B0061D3E5 /* SceneDelegate.swift in Sources */,
 				56A2B11D24726311002C0C6C /* testSplashScreenViewController.swift in Sources */,
 				5689FD96244FCE4D0061D3E5 /* settingsViewController.swift in Sources */,
-				56A2B11F24739FF9002C0C6C /* testCalibrateViewController.swift in Sources */,
+				56A2B11F24739FF9002C0C6C /* calibrateAlphabetViewController.swift in Sources */,
 				56297DE0246541C90063DB9A /* Constants.swift in Sources */,
 				560C998E2457E17500747701 /* SGTitleLabel.swift in Sources */,
 				56D8AD4F2462084A001125F1 /* APIRequest.swift in Sources */,
@@ -432,7 +440,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = smartGloves/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,6 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itm.smartGloves;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +460,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = smartGloves/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.itm.smartGloves;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
